@@ -50,7 +50,7 @@ class MemberViewSet(viewsets.ModelViewSet):
     serializer_class = MemberSerializer
 
 class LoanViewSet(viewsets.ModelViewSet):
-    queryset = Loan.objects.all()
+    queryset = Loan.objects.all().order_by('-id')
     serializer_class = LoanSerializer
 
     @action(detail=True, methods=['post'])
